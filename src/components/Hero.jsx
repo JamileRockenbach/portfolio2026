@@ -123,7 +123,7 @@ export default function Hero() {
         </div>
 
         {/* foto quadrada com bordas arredondadas e elementos flutuantes -- assinatura visual */}
-        <div className="group relative mx-auto w-64 h-64 md:w-80 md:h-80">
+        <div className="group relative mx-auto w-64 h-64 md:w-80 md:h-80 mt-6 md:mt-0">
           <div className="absolute inset-3 rounded-[2rem] bg-gradient-to-br from-purple-500/40 to-transparent blur-2xl" aria-hidden="true" />
           <div className="relative w-full h-full overflow-hidden rounded-[2rem] border-2 border-border shadow-glow-lg">
             <img
@@ -137,13 +137,13 @@ export default function Hero() {
             {profile.location[lang]}
           </span>
 
-          {/* elementos flutuantes de tech ao redor da foto */}
+          {/* elementos flutuantes de tech ao redor da foto (visíveis em todas as telas) */}
           <ReactMark
-            className="hidden sm:block absolute -top-9 -right-6 w-11 h-11 text-purple-400 animate-float drop-shadow-[0_0_10px_rgba(168,85,247,0.6)]"
+            className="absolute -top-9 -right-5 sm:-right-6 w-9 h-9 sm:w-11 sm:h-11 text-purple-400 animate-float drop-shadow-[0_0_10px_rgba(168,85,247,0.6)]"
             aria-hidden="true"
           />
           <span
-            className="absolute -top-9 left-6 font-display text-3xl font-semibold text-purple-400/80 animate-float-slow drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]"
+            className="absolute -top-9 left-6 font-display text-2xl sm:text-3xl font-semibold text-purple-400/80 animate-float-slow drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]"
             style={{ animationDelay: '1.2s' }}
             aria-hidden="true"
           >

@@ -85,7 +85,7 @@ export default function Header() {
           <button
             onClick={() => setOpen(!open)}
             className="lg:hidden w-9 h-9 flex items-center justify-center rounded-full border border-border"
-            aria-label="Abrir menu"
+            aria-label={open ? t.nav.sair : 'Abrir menu'}
             aria-expanded={open}
           >
             <span className="sr-only">Menu</span>
@@ -104,16 +104,6 @@ export default function Header() {
               className="absolute inset-0 bg-grid-dots bg-grid opacity-30 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_20%,black,transparent)]"
               aria-hidden="true"
             />
-
-            <button
-              onClick={() => setOpen(false)}
-              className="absolute top-5 right-6 z-10 w-10 h-10 flex items-center justify-center rounded-full border border-border text-text-secondary hover:border-purple-500 hover:text-purple-300 transition-all duration-300"
-              aria-label={t.nav.sair}
-            >
-              <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M6 6l12 12M18 6 6 18" strokeLinecap="round" />
-              </svg>
-            </button>
 
             <nav className="relative flex-1 flex flex-col items-center justify-center gap-4 px-8">
               {navItems.map((item, i) => (
