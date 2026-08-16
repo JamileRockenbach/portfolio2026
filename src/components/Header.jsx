@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { Link } from 'react-router-dom'
 import { navItems } from '../data/content'
 import { useLanguage } from '../i18n/LanguageContext'
@@ -47,7 +48,7 @@ export default function Header() {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
         <Link to="/#top" className="font-display font-semibold text-sm sm:text-base tracking-tight whitespace-nowrap text-header-brand">
-          Jamile Rockenbach <span className="text-purple-500">|</span> Desenvolvedora
+          Jamile Rockenbach <span className="text-purple-500">|</span> {t.header.role}
         </Link>
 
         <nav className="hidden lg:flex items-center gap-2">
@@ -96,56 +97,58 @@ export default function Header() {
         </div>
       </div>
 
-      {open && (
-        <div className="lg:hidden fixed inset-0 z-40 bg-base/97 backdrop-blur-xl flex flex-col pt-16 animate-[fadeIn_0.25s_ease]">
-          <div
-            className="absolute inset-0 bg-grid-dots bg-grid opacity-30 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_20%,black,transparent)]"
-            aria-hidden="true"
-          />
+      {open &&
+        createPortal(
+          <div className="lg:hidden fixed inset-0 z-40 bg-base/97 backdrop-blur-xl flex flex-col pt-16 animate-[fadeIn_0.25s_ease]">
+            <div
+              className="absolute inset-0 bg-grid-dots bg-grid opacity-30 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_20%,black,transparent)]"
+              aria-hidden="true"
+            />
 
-          <button
-            onClick={() => setOpen(false)}
-            className="absolute top-5 right-6 z-10 w-10 h-10 flex items-center justify-center rounded-full border border-border text-text-secondary hover:border-purple-500 hover:text-purple-300 transition-all duration-300"
-            aria-label={t.nav.sair}
-          >
-            <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M6 6l12 12M18 6 6 18" strokeLinecap="round" />
-            </svg>
-          </button>
+            <button
+              onClick={() => setOpen(false)}
+              className="absolute top-5 right-6 z-10 w-10 h-10 flex items-center justify-center rounded-full border border-border text-text-secondary hover:border-purple-500 hover:text-purple-300 transition-all duration-300"
+              aria-label={t.nav.sair}
+            >
+              <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M6 6l12 12M18 6 6 18" strokeLinecap="round" />
+              </svg>
+            </button>
 
-          <nav className="relative flex-1 flex flex-col items-center justify-center gap-4 px-8">
-            {navItems.map((item, i) => (
-              <Link
-                key={item.href}
-                to={`/${item.href}`}
-                onClick={() => setOpen(false)}
-                className="w-full max-w-xs text-center text-lg font-display font-medium py-3.5 rounded-full border border-border text-text-primary hover:border-purple-500 hover:text-purple-300 hover:shadow-glow transition-all duration-300 animate-[fadeSlideUp_0.4s_ease_both]"
-                style={{ animationDelay: `${i * 60}ms` }}
+            <nav className="relative flex-1 flex flex-col items-center justify-center gap-4 px-8">
+              {navItems.map((item, i) => (
+                <Link
+                  key={item.href}
+                  to={`/${item.href}`}
+                  onClick={() => setOpen(false)}
+                  className="w-full max-w-xs text-center text-lg font-display font-medium py-3.5 rounded-full border border-border text-text-primary hover:border-purple-500 hover:text-purple-300 hover:shadow-glow transition-all duration-300 animate-[fadeSlideUp_0.4s_ease_both]"
+                  style={{ animationDelay: `${i * 60}ms` }}
+                >
+                  {t.nav[item.key]}
+                </Link>
+              ))}
+            </nav>
+
+            <div className="relative flex items-center justify-center gap-3 pb-14">
+              <button
+                onClick={toggleTheme}
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-border text-text-secondary"
+                aria-label={theme === 'dark' ? t.theme.toggleToLight : t.theme.toggleToDark}
               >
-                {t.nav[item.key]}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="relative flex items-center justify-center gap-3 pb-14">
-            <button
-              onClick={toggleTheme}
-              className="w-10 h-10 flex items-center justify-center rounded-full border border-border text-text-secondary"
-              aria-label={theme === 'dark' ? t.theme.toggleToLight : t.theme.toggleToDark}
-            >
-              {theme === 'dark' ? <SunIcon className="w-4 h-4" /> : <MoonIcon className="w-4 h-4" />}
-            </button>
-            <button
-              onClick={toggleLang}
-              className="flex items-center gap-1 text-sm font-medium px-4 py-2 rounded-full border border-border text-text-secondary"
-            >
-              <span className={lang === 'pt' ? 'text-purple-400' : ''}>PT</span>
-              <span className="text-text-muted">/</span>
-              <span className={lang === 'en' ? 'text-purple-400' : ''}>EN</span>
-            </button>
-          </div>
-        </div>
-      )}
+                {theme === 'dark' ? <SunIcon className="w-4 h-4" /> : <MoonIcon className="w-4 h-4" />}
+              </button>
+              <button
+                onClick={toggleLang}
+                className="flex items-center gap-1 text-sm font-medium px-4 py-2 rounded-full border border-border text-text-secondary"
+              >
+                <span className={lang === 'pt' ? 'text-purple-400' : ''}>PT</span>
+                <span className="text-text-muted">/</span>
+                <span className={lang === 'en' ? 'text-purple-400' : ''}>EN</span>
+              </button>
+            </div>
+          </div>,
+          document.body,
+        )}
     </header>
   )
 }

@@ -123,13 +123,15 @@ export default function Hero() {
         </div>
 
         {/* foto quadrada com bordas arredondadas e elementos flutuantes -- assinatura visual */}
-        <div className="relative mx-auto w-64 h-64 md:w-80 md:h-80">
+        <div className="group relative mx-auto w-64 h-64 md:w-80 md:h-80">
           <div className="absolute inset-3 rounded-[2rem] bg-gradient-to-br from-purple-500/40 to-transparent blur-2xl" aria-hidden="true" />
-          <img
-            src={profile.photo}
-            alt={`Foto de ${profile.fullName}`}
-            className="relative w-full h-full object-cover rounded-[2rem] border-2 border-border shadow-glow-lg"
-          />
+          <div className="relative w-full h-full overflow-hidden rounded-[2rem] border-2 border-border shadow-glow-lg">
+            <img
+              src={profile.photo}
+              alt={`Foto de ${profile.fullName}`}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+          </div>
           <span className="absolute bottom-3 right-3 flex items-center gap-2 bg-surface/90 backdrop-blur px-3 py-1.5 rounded-full border border-border text-[10px] sm:text-xs text-text-secondary whitespace-nowrap">
             <span className="w-2 h-2 rounded-full bg-purple-400" />
             {profile.location[lang]}

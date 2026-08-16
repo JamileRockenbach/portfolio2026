@@ -24,12 +24,12 @@ function ProjectCard({ project, lang }) {
       <div className="aspect-video overflow-hidden bg-surface2">
         <img
           src={project.image}
-          alt={project.title}
+          alt={project.title[lang]}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
       </div>
       <div className="p-4 sm:p-5">
-        <h3 className="project-title font-display font-semibold text-sm sm:text-base">{project.title}</h3>
+        <h3 className="project-title font-display font-semibold text-sm sm:text-base">{project.title[lang]}</h3>
         <p className="text-xs sm:text-sm text-text-secondary mt-2 leading-relaxed line-clamp-3">
           {project.description[lang]}
         </p>
@@ -111,7 +111,7 @@ export default function Projects() {
           className="flex gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory pb-4 px-6 max-w-6xl mx-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         >
           {filtered.map((project) => (
-            <ProjectCard key={project.title} project={project} lang={lang} />
+            <ProjectCard key={project.slug} project={project} lang={lang} />
           ))}
         </div>
       </div>

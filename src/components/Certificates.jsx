@@ -20,7 +20,7 @@ function ArrowIcon(props) {
   )
 }
 
-function CertCard({ cert }) {
+function CertCard({ cert, lang }) {
   const spotlight = useSpotlight()
   const { t } = useLanguage()
   const Wrapper = cert.link ? 'a' : 'div'
@@ -35,7 +35,7 @@ function CertCard({ cert }) {
           <MedalIcon className="w-4 h-4" />
         </div>
         <p className="text-[11px] tracking-[0.15em] uppercase text-text-muted mb-2">{cert.issuer}</p>
-        <h3 className="font-display text-base font-semibold text-text-primary leading-snug">{cert.title}</h3>
+        <h3 className="font-display text-base font-semibold text-text-primary leading-snug">{cert.title[lang]}</h3>
         {cert.id && <p className="text-[11px] text-text-muted mt-2 break-all">ID: {cert.id}</p>}
       </div>
 
@@ -53,7 +53,7 @@ function CertCard({ cert }) {
 }
 
 export default function Certificates() {
-  const { t } = useLanguage()
+  const { lang, t } = useLanguage()
   const [ref, visible] = useReveal()
   const trackRef = useRef(null)
 
@@ -96,7 +96,7 @@ export default function Certificates() {
           className="mt-10 flex gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory pb-4 px-6 max-w-6xl mx-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         >
           {certificates.map((cert) => (
-            <CertCard key={cert.title} cert={cert} />
+            <CertCard key={cert.title.pt} cert={cert} lang={lang} />
           ))}
         </div>
 

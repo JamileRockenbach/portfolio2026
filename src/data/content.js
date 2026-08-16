@@ -28,23 +28,23 @@ export const profile = {
 }
 
 export const skills = [
-  { name: 'Python', icon: '/assets/python.svg' },
   { name: 'HTML', icon: '/assets/html5.svg' },
   { name: 'CSS', icon: '/assets/css.svg' },
   { name: 'JavaScript', icon: '/assets/javascript.svg' },
   { name: 'React', icon: '/assets/react.svg' },
+  { name: 'React Native', icon: '/assets/react.svg' },
+  { name: 'Figma', icon: '/assets/figma.svg' },
+  { name: 'Python', icon: '/assets/python.svg' },
   { name: 'Pandas', icon: '/assets/pandas.svg' },
   { name: 'C#', icon: '/assets/ccharp.svg' },
   { name: '.NET', icon: '/assets/dotnet.svg' },
   { name: 'Git', icon: '/assets/git.svg' },
   { name: 'GitHub', icon: '/assets/github.svg' },
   { name: 'Java', icon: '/assets/java.svg' },
-  { name: 'React Native', icon: '/assets/react.svg' },
-  { name: 'Figma', icon: '/assets/figma.svg' },
   { name: 'IntelliJ', icon: '/assets/intellij.svg' },
+  { name: 'Docker', icon: '/assets/docker.svg' },
   { name: 'SQL', icon: '/assets/sql.svg' },
   { name: 'PostgreSQL', icon: '/assets/postgresql.svg' },
-  { name: 'Docker', icon: '/assets/docker.svg' },
 ]
 
 const tagLabels = {
@@ -71,7 +71,7 @@ export const projectCategories = [
 export const projects = [
   {
     slug: 'golup',
-    title: 'GolUp',
+    title: { pt: 'GolUp', en: 'GolUp' },
     description: {
       pt: 'GolUp é um marketplace mobile onde usuários podem navegar por produtos esportivos, favoritar itens, realizar compras e acompanhar seus pedidos. Toda a identidade visual foi inspirada em detalhes do meio esportivo, utilizando elementos gráficos, cores e uma experiência voltada para amantes do futebol. Front-end mobile em React Native e JavaScript, API em Java, banco PostgreSQL, autenticação JWT e suporte a múltiplos idiomas.',
       en: 'GolUp is a mobile marketplace where users can browse sports products, favorite items, make purchases and track their orders. The entire visual identity was inspired by details from the sports world, using graphic elements, colors and an experience aimed at football lovers. Mobile front-end in React Native and JavaScript, API in Java, PostgreSQL database, JWT authentication and support for multiple languages.',
@@ -83,7 +83,7 @@ export const projects = [
   },
   {
     slug: 'olivrastore',
-    title: 'OlivraStore',
+    title: { pt: 'OlivraStore', en: 'OlivraStore' },
     description: {
       pt: "Aplicativo 'Olivra Store ₊✧' de listagem e consulta de produtos consumindo a Fake Store API, desenvolvido com JavaScript e Node.js.",
       en: "'Olivra Store ₊✧' app for listing and browsing products, consuming the Fake Store API, built with JavaScript and Node.js.",
@@ -95,7 +95,7 @@ export const projects = [
   },
   {
     slug: 'turisme',
-    title: 'Turis.me',
+    title: { pt: 'Turis.me', en: 'Turis.me' },
     description: {
       pt: 'Turis.Me - Maps é uma aplicação web de fins didáticos desenvolvida com React que permite visualizar e cadastrar pontos geográficos em um mapa interativo. Usuários autenticados podem adicionar ou atualizar pontos clicando no mapa, que são salvos em um backend e exibidos para todos.',
       en: 'Turis.Me - Maps is an educational web application built with React that lets users view and register geographic points on an interactive map. Authenticated users can add or update points by clicking on the map, which are saved to a backend and shown to everyone.',
@@ -108,7 +108,7 @@ export const projects = [
   },
   {
     slug: 'jogo-da-memoria',
-    title: 'Jogo da Memória',
+    title: { pt: 'Jogo da Memória', en: 'Memory Game' },
     description: {
       pt: 'Jogo da memória multiplayer desenvolvido com Node.js, WebSockets e JavaScript puro, com temática de linguagens de programação. Dois jogadores entram na mesma sala e disputam quem encontra mais pares.',
       en: 'Multiplayer memory game built with Node.js, WebSockets and vanilla JavaScript, themed around programming languages. Two players join the same room and compete to find the most matching pairs.',
@@ -120,7 +120,7 @@ export const projects = [
   },
   {
     slug: 'prompt-manager',
-    title: 'Prompt Manager',
+    title: { pt: 'Prompt Manager', en: 'Prompt Manager' },
     description: {
       pt: 'Desenvolvimento de um projeto web completo do zero utilizando HTML, CSS, JavaScript e Inteligência Artificial na prática como copiloto para aumentar a produtividade e acelerar o aprendizado. Criação do Prompt Manager: uma plataforma web prática e intuitiva para organizar e gerenciar prompts de IA em um só lugar.',
       en: 'A complete web project built from scratch using HTML, CSS, JavaScript and AI as a hands-on copilot to boost productivity and speed up learning. Creation of Prompt Manager: a practical and intuitive web platform to organize and manage AI prompts in one place.',
@@ -132,7 +132,10 @@ export const projects = [
   },
   {
     slug: 'plpgsql',
-    title: 'Manipulação Dinâmica e Consistência de Dados com PL/pgSQL',
+    title: {
+      pt: 'Manipulação Dinâmica e Consistência de Dados com PL/pgSQL',
+      en: 'Dynamic Data Manipulation and Consistency with PL/pgSQL',
+    },
     description: {
       pt: 'Projeto acadêmico que aplica recursos avançados da linguagem procedural PL/pgSQL (PostgreSQL 17) para automação de regras de negócio, manipulação de dados complexos e garantia da integridade referencial e transacional de um ecossistema de banco de dados voltado a e-commerce/vendas. O escopo abrange o desenvolvimento, teste e documentação de functions, procedures, triggers e controle transacional com RAISE EXCEPTION e RAISE WARNING.',
       en: 'Academic project applying advanced features of the PL/pgSQL procedural language (PostgreSQL 17) to automate business rules, handle complex data manipulation and ensure referential and transactional integrity for an e-commerce/sales database ecosystem. The scope covers developing, testing and documenting functions, procedures, triggers and transactional control with RAISE EXCEPTION and RAISE WARNING.',
@@ -144,7 +147,10 @@ export const projects = [
   },
   {
     slug: 'dashboard-salarios',
-    title: 'Dashboard de Análise de Salários na Área de Dados',
+    title: {
+      pt: 'Dashboard de Análise de Salários na Área de Dados',
+      en: 'Data Field Salary Analysis Dashboard',
+    },
     description: {
       pt: 'Dashboard interativo desenvolvido durante a Imersão de Dados da Alura em Python, com foco na análise de salários na área de dados, permitindo explorar informações de diferentes anos, cargos, senioridades, tipos de contrato e tamanho das empresas. Construído com Streamlit e Plotly, oferecendo uma experiência visual clara, dinâmica e intuitiva.',
       en: "Interactive dashboard built during Alura's Data Immersion in Python, focused on analyzing salaries in the data field, allowing exploration of information across different years, job roles, seniority levels, contract types and company sizes. Built with Streamlit and Plotly, offering a clear, dynamic and intuitive visual experience.",
@@ -156,7 +162,7 @@ export const projects = [
   },
   {
     slug: 'clinica-medica',
-    title: 'Banco de Dados de Clínica Médica',
+    title: { pt: 'Banco de Dados de Clínica Médica', en: 'Medical Clinic Database' },
     description: {
       pt: 'Projeto completo de banco de dados aplicando modelagem conceitual, lógica e física, além da implementação e manipulação de dados com SQL no PostgreSQL. Cenário: desenvolvimento do sistema de informação de uma clínica médica, gerenciando pacientes, médicos, consultas, especialidades médicas e prontuários.',
       en: 'A complete database project applying conceptual, logical and physical modeling, along with data implementation and manipulation using SQL in PostgreSQL. Scenario: building the information system for a medical clinic, managing patients, doctors, appointments, medical specialties and health records.',
@@ -169,7 +175,7 @@ export const projects = [
   },
   {
     slug: 'jornada-de-luz',
-    title: 'Game a Jornada de Luz',
+    title: { pt: 'Game a Jornada de Luz', en: 'A Journey of Light (Game)' },
     description: {
       pt: 'Jogo 2D desenvolvido em Python no Pygame que une arte e emoção para guiar o jogador por uma experiência simbólica de superação.',
       en: 'A 2D game built in Python with Pygame that blends art and emotion to guide the player through a symbolic journey of overcoming adversity.',
@@ -181,7 +187,7 @@ export const projects = [
   },
   {
     slug: 'mini-dashboard-dados',
-    title: 'Mini Dashboard de Dados',
+    title: { pt: 'Mini Dashboard de Dados', en: 'Mini Data Dashboard' },
     description: {
       pt: 'Aplicação para visualizar e analisar dados de arquivos .csv de forma interativa, usando Python, tkinter, pandas e matplotlib.',
       en: 'An application to interactively visualize and analyze data from .csv files, built with Python, tkinter, pandas and matplotlib.',
@@ -193,7 +199,7 @@ export const projects = [
   },
   {
     slug: 'botytalk',
-    title: 'BotyTalk',
+    title: { pt: 'BotyTalk', en: 'BotyTalk' },
     description: {
       pt: 'Chatbot desenvolvido em Python e inteligência artificial para ajudar nos estudos, criado durante o curso da Assimov Academy.',
       en: 'A chatbot built with Python and AI to help with studying, created during the Assimov Academy course.',
@@ -205,7 +211,7 @@ export const projects = [
   },
   {
     slug: 'estoque-poo',
-    title: 'Sistema de Estoque com POO',
+    title: { pt: 'Sistema de Estoque com POO', en: 'Inventory System with OOP' },
     description: {
       pt: 'Mini sistema de estoque e vendas em Programação Orientada a Objetos, utilizando estruturas de dados Lista, Pilha e Fila.',
       en: 'A small inventory and sales system built with Object-Oriented Programming, using List, Stack and Queue data structures.',
@@ -217,7 +223,7 @@ export const projects = [
   },
   {
     slug: 'api-java',
-    title: 'API Java com Microserviços',
+    title: { pt: 'API Java com Microserviços', en: 'Java API with Microservices' },
     description: {
       pt: 'O projeto é dividido em múltiplos serviços independentes, que se comunicam entre si através de um API Gateway e um serviço de descoberta (Service Discovery).',
       en: 'The project is divided into multiple independent services that communicate with each other through an API Gateway and a Service Discovery service.',
@@ -229,7 +235,7 @@ export const projects = [
   },
   {
     slug: 'biblioteca',
-    title: 'Sistema de Biblioteca',
+    title: { pt: 'Sistema de Biblioteca', en: 'Library Management System' },
     description: {
       pt: 'Sistema de gerenciamento de biblioteca em Java, aplicando herança, polimorfismo, encapsulamento e abstração em um projeto funcional.',
       en: 'A library management system in Java, applying inheritance, polymorphism, encapsulation and abstraction in a working project.',
@@ -241,7 +247,7 @@ export const projects = [
   },
   {
     slug: 'previsao-tempo',
-    title: 'Previsão do Tempo com Python + Tkinter',
+    title: { pt: 'Previsão do Tempo com Python + Tkinter', en: 'Weather Forecast with Python + Tkinter' },
     description: {
       pt: 'Mini projeto de previsão do tempo desenvolvido em Python com interface gráfica em Tkinter. O usuário digita a cidade e o estado (ex: Campinas, SP) e o app exibe temperatura atual, umidade relativa do ar e condição climática, consumindo a API Open-Meteo com requisições HTTP via requests.',
       en: 'A small weather forecast project built in Python with a Tkinter graphical interface. The user types in a city and state (e.g. Campinas, SP) and the app shows the current temperature, relative humidity and weather condition, consuming the Open-Meteo API through HTTP requests with the requests library.',
@@ -255,84 +261,96 @@ export const projects = [
 
 export const certificates = [
   {
-    title: 'Qualificação em Desenvolvimento de Aplicação Júnior',
+    title: {
+      pt: 'Qualificação em Desenvolvimento de Aplicação Júnior',
+      en: 'Junior Application Development Qualification',
+    },
     issuer: 'Atitus Educação',
     id: null,
     year: '2025.1',
     link: 'assets/Desenvolvimento-Aplicações-Júnior.pdf',
   },
   {
-    title: 'Qualificação em Desenvolvimento de Solução Full Stack',
+    title: {
+      pt: 'Qualificação em Desenvolvimento de Solução Full Stack',
+      en: 'Full Stack Solution Development Qualification',
+    },
     issuer: 'Atitus Educação',
     id: null,
     year: '2025.2',
     link: 'assets/Qualificação-FullStack.pdf',
   },
   {
-    title: 'Fullstack Developer',
+    title: { pt: 'Fullstack Developer', en: 'Fullstack Developer' },
     issuer: 'DIO',
     id: null,
     year: '07 de Novembro de 2025',
     link: 'assets/fullstack.pdf',
   },
   {
-    title: 'Lógica de Programação',
+    title: { pt: 'Lógica de Programação', en: 'Programming Logic' },
     issuer: 'DIO',
     id: null,
     year: '15 de Fevereiro de 2026',
     link: 'assets/logica.pdf',
   },
   {
-    title: 'Imersão de Dados com Python',
+    title: { pt: 'Imersão de Dados com Python', en: 'Python Data Immersion' },
     issuer: 'Alura',
     id: null,
     year: '09 de fevereiro de 2026',
     link: 'assets/imersao-dados.pdf',
   },
   {
-    title: 'Introdução ao .NET e Controle de Versão com Git',
+    title: {
+      pt: 'Introdução ao .NET e Controle de Versão com Git',
+      en: 'Introduction to .NET and Version Control with Git',
+    },
     issuer: 'DIO',
     id: null,
     year: '07 de setembro de 2025',
     link: 'https://www.dio.me/certificate/AB1CLBRX/share',
   },
   {
-    title: 'Python para IA: do zero ao primeiro chatbot',
+    title: {
+      pt: 'Python para IA: do zero ao primeiro chatbot',
+      en: 'Python for AI: from Zero to Your First Chatbot',
+    },
     issuer: 'Assimov Academy',
     id: null,
     year: '01 de julho de 2025',
     link: 'https://hub.asimov.academy/validar-certificado/a4ebd041-9c3c-46e3-a21f-f72c8ea1759a',
   },
   {
-    title: 'NLW Agents - Iniciante',
+    title: { pt: 'NLW Agents - Iniciante', en: 'NLW Agents - Beginner' },
     issuer: 'Rocketseat',
     id: null,
     year: '11 de julho de 2025',
     link: 'https://app.rocketseat.com.br/certificates/e62ba556-f08f-4cbd-92fe-0c079716d7f9',
   },
   {
-    title: 'Introdução ao React',
+    title: { pt: 'Introdução ao React', en: 'Introduction to React' },
     issuer: 'DIO',
     id: null,
     year: '25 de agosto de 2025',
     link: 'https://www.dio.me/certificate/BLCXHOSV/share',
   },
   {
-    title: 'Imersão Dev Agentes de IA Google',
+    title: { pt: 'Imersão Dev Agentes de IA Google', en: 'Google AI Agents Dev Immersion' },
     issuer: 'Alura',
     id: null,
     year: '22 de setembro de 2025',
     link: 'assets/dev-agentes.pdf',
   },
   {
-    title: 'Introdução à Ciência de Dados',
+    title: { pt: 'Introdução à Ciência de Dados', en: 'Introduction to Data Science' },
     issuer: 'Santander Open Academy',
     id: null,
     year: '04 de junho de 2025',
     link: 'assets/ciencia-dados.pdf',
   },
   {
-    title: 'Introdução à programação com Python',
+    title: { pt: 'Introdução à programação com Python', en: 'Introduction to Programming with Python' },
     issuer: 'Santander Open Academy',
     id: null,
     year: '11 de maio de 2025',

@@ -1,6 +1,7 @@
 export const translations = {
   pt: {
     nav: { sobre: 'Sobre', skills: 'Skills', projetos: 'Projetos', certificados: 'Certificados', experiencia: 'Experiências', contato: 'Contato', sair: 'Sair' },
+    header: { role: 'Desenvolvedora' },
     theme: { toggleToLight: 'Ativar tema claro', toggleToDark: 'Ativar tema escuro' },
     hero: {
       greeting: 'Bem-vindo(a), meu nome é',
@@ -38,9 +39,10 @@ export const translations = {
   },
   en: {
     nav: { sobre: 'About', skills: 'Skills', projetos: 'Projects', certificados: 'Certificates', experiencia: 'Experience', contato: 'Contact', sair: 'Close' },
+    header: { role: 'Developer' },
     theme: { toggleToLight: 'Switch to light theme', toggleToDark: 'Switch to dark theme' },
     hero: {
-      greeting: 'Wellcome! My name is',
+      greeting: 'Welcome! My name is',
       ctaProjects: 'View projects',
       ctaCV: 'Download CV',
       statLabels: { languages: 'Languages', projects: 'Academic Projects', certificates: 'Certificates' },

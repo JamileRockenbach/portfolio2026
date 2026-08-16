@@ -61,7 +61,7 @@ export default function ProjectDetail() {
         </Link>
 
         <div className="text-center">
-          <h1 className="font-display text-2xl sm:text-3xl font-semibold text-text-primary">{project.title}</h1>
+          <h1 className="font-display text-2xl sm:text-3xl font-semibold text-text-primary">{project.title[lang]}</h1>
 
           <div className="relative w-full max-w-sm sm:max-w-md mx-auto mt-8 mb-8">
             <div
@@ -69,7 +69,7 @@ export default function ProjectDetail() {
               aria-hidden="true"
             />
             <div className="relative rounded-[1.5rem] overflow-hidden border-2 border-border shadow-glow-lg bg-surface2 aspect-video">
-              <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+              <img src={project.image} alt={project.title[lang]} className="w-full h-full object-cover" />
             </div>
           </div>
 
