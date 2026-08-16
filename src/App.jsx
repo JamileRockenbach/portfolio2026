@@ -13,6 +13,7 @@ import Experience from './components/Experience'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ScrollToHash from './components/ScrollToHash'
+import Preloader from './components/Preloader'
 
 function HomePage() {
   return (
@@ -33,6 +34,7 @@ export default function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
+        <Preloader />
         <BrowserRouter>
           <ScrollToHash />
           <div className="min-h-screen bg-base">
